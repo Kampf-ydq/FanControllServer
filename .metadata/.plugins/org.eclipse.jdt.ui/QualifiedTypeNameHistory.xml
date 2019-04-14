@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.moon.mapper.TUserMapper"/>
+<fullyQualifiedTypeName name="com.moon.pojo.TUserExample"/>
+<fullyQualifiedTypeName name="com.moon.service.UserService"/>
+<fullyQualifiedTypeName name="com.moon.pojo.TUser"/>
+<fullyQualifiedTypeName name="com.moon.mapper.TbUserMapper"/>
+<fullyQualifiedTypeName name="com.moon.pojo.TbUserExample"/>
+<fullyQualifiedTypeName name="com.moon.pojo.TbUserExample.Criteria"/>
+<fullyQualifiedTypeName name="com.moon.pojo.TbUser"/>
+<fullyQualifiedTypeName name="com.moon.mapper.TbParamMapper"/>
+<fullyQualifiedTypeName name="com.moon.pojo.TbParamExample"/>
+<fullyQualifiedTypeName name="com.moon.pojo.TbParamExample.Criteria"/>
+<fullyQualifiedTypeName name="com.moon.service.FanService"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+<fullyQualifiedTypeName name="com.moon.mapper.TbContactMapper"/>
+<fullyQualifiedTypeName name="com.moon.pojo.TbContactExample"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="com.moon.service.ContactService"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
+<fullyQualifiedTypeName name="com.moon.common.pojo.MoonResult"/>
+<fullyQualifiedTypeName name="com.moon.pojo.TbContact"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
+</qualifiedTypeNameHistroy>

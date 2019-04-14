@@ -1,0 +1,4 @@
+com.android.ide.eclipse.adt.fixLegacyEditors=1
+com.android.ide.eclipse.adt.sdk=G\:\\Android\u5F00\u53D1tools\\android-sdk_r24.0.2-windows\\android-sdk-windows
+com.android.ide.eclipse.adt.xmlEditor=true
+eclipse.preferences.version=1
