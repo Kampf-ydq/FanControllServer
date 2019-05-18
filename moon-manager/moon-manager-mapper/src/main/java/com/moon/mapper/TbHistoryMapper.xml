@@ -6,7 +6,7 @@
     <result column="number" property="number" jdbcType="VARCHAR" />
     <result column="statu" property="statu" jdbcType="VARCHAR" />
     <result column="contact_number" property="contactNumber" jdbcType="VARCHAR" />
-    <result column="create" property="create" jdbcType="TIMESTAMP" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -67,7 +67,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, number, statu, contact_number, create
+    id, number, statu, contact_number, create_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.moon.pojo.TbHistoryExample" >
     select
@@ -101,9 +101,9 @@
   </delete>
   <insert id="insert" parameterType="com.moon.pojo.TbHistory" >
     insert into tb_history (id, number, statu, 
-      contact_number, create)
+      contact_number, create_time)
     values (#{id,jdbcType=BIGINT}, #{number,jdbcType=VARCHAR}, #{statu,jdbcType=VARCHAR}, 
-      #{contactNumber,jdbcType=VARCHAR}, #{create,jdbcType=TIMESTAMP})
+      #{contactNumber,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.moon.pojo.TbHistory" >
     insert into tb_history
@@ -120,8 +120,8 @@
       <if test="contactNumber != null" >
         contact_number,
       </if>
-      <if test="create != null" >
-        create,
+      <if test="createTime != null" >
+        create_time,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -137,8 +137,8 @@
       <if test="contactNumber != null" >
         #{contactNumber,jdbcType=VARCHAR},
       </if>
-      <if test="create != null" >
-        #{create,jdbcType=TIMESTAMP},
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -163,8 +163,8 @@
       <if test="record.contactNumber != null" >
         contact_number = #{record.contactNumber,jdbcType=VARCHAR},
       </if>
-      <if test="record.create != null" >
-        create = #{record.create,jdbcType=TIMESTAMP},
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -177,7 +177,7 @@
       number = #{record.number,jdbcType=VARCHAR},
       statu = #{record.statu,jdbcType=VARCHAR},
       contact_number = #{record.contactNumber,jdbcType=VARCHAR},
-      create = #{record.create,jdbcType=TIMESTAMP}
+      create_time = #{record.createTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -194,8 +194,8 @@
       <if test="contactNumber != null" >
         contact_number = #{contactNumber,jdbcType=VARCHAR},
       </if>
-      <if test="create != null" >
-        create = #{create,jdbcType=TIMESTAMP},
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
@@ -205,7 +205,7 @@
     set number = #{number,jdbcType=VARCHAR},
       statu = #{statu,jdbcType=VARCHAR},
       contact_number = #{contactNumber,jdbcType=VARCHAR},
-      create = #{create,jdbcType=TIMESTAMP}
+      create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

@@ -2,6 +2,7 @@ package com.moon.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -52,9 +53,9 @@ public class ContactController {
 		return MoonResult.ok("SUCCESS");
 	}
 	
-	@RequestMapping("/contact/lookContact")
+	@RequestMapping("/contact/lookContact/{number}")
 	@ResponseBody
-	public MoonResult lookContact(String number){
+	public MoonResult lookContact(@PathVariable String number){
 		if (number == null) {
 			return MoonResult.ok("ERROR");
 		}

@@ -1,3 +1,4 @@
+com\moon\controller\HistoryController.class
 com\moon\controller\FanController.class
 com\moon\controller\ContactController.class
 com\moon\controller\UserController.class
