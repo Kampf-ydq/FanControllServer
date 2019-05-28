@@ -1,6 +1,6 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:deploy,org.eclipse.launchbar.core.descriptorType.default\:GeneratorSqlmap,org.eclipse.launchbar.core.descriptorType.default\:moon deploy,org.eclipse.launchbar.core.descriptorType.default\:moon-manager (1),org.eclipse.launchbar.core.descriptorType.default\:moon-manager (2),org.eclipse.launchbar.core.descriptorType.default\:moon-manager (3),org.eclipse.launchbar.core.descriptorType.default\:moon-manager (4),org.eclipse.launchbar.core.descriptorType.default\:moon-manager
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:deploy,org.eclipse.launchbar.core.descriptorType.default\:moon deploy,org.eclipse.launchbar.core.descriptorType.default\:moon-manager (1),org.eclipse.launchbar.core.descriptorType.default\:moon-manager (2),org.eclipse.launchbar.core.descriptorType.default\:moon-manager (3),org.eclipse.launchbar.core.descriptorType.default\:moon-manager (4),org.eclipse.launchbar.core.descriptorType.default\:JMSSink,org.eclipse.launchbar.core.descriptorType.default\:GeneratorSqlmap,org.eclipse.launchbar.core.descriptorType.default\:moon-manager
 eclipse.preferences.version=1
 org.eclipse.launchbar.core.descriptorType.default\:GeneratorSqlmap/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:GeneratorSqlmap/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

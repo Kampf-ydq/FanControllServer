@@ -1,0 +1,5 @@
+package com.moon.service;
+
+public interface ReportService {
+
+}

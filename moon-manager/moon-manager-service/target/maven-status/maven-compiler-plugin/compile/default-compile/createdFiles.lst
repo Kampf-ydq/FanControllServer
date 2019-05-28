@@ -1,4 +1,5 @@
 com\moon\service\impl\ContactServiceImpl.class
+com\moon\service\ReportService.class
 com\moon\service\impl\FanServiceImpl.class
 com\moon\service\UserService.class
 com\moon\service\FanService.class
@@ -6,3 +7,4 @@ com\moon\service\ContactService.class
 com\moon\service\HistoryService.class
 com\moon\service\impl\UserServiceImpl.class
 com\moon\service\impl\HistoryServiceImpl.class
+com\moon\service\impl\ReportServiceImpl.class

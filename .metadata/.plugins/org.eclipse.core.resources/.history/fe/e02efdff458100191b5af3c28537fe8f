@@ -1,0 +1,16 @@
+package com.moon.service.impl;
+
+import com.moon.common.pojo.MoonResult;
+import com.moon.service.ReportService;
+
+/*
+ * 风机报表Service
+ */
+public class ReportServiceImpl implements ReportService {
+
+	@Override
+	public MoonResult getReport(String number) {
+		return null;
+	}
+
+}

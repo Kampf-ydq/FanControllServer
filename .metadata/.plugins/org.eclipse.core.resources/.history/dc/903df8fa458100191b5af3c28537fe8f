@@ -1,0 +1,14 @@
+package com.moon.service.impl;
+
+import com.moon.common.pojo.MoonResult;
+import com.moon.service.ReportService;
+
+public class ReportServiceImpl implements ReportService {
+
+	@Override
+	public MoonResult getReport(String number) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

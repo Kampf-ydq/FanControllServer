@@ -46,6 +46,7 @@
 		<table schema="" tableName="tb_param"></table>
 		<table schema="" tableName="tb_contact"></table>
 		<table schema="" tableName="tb_history"></table>
+		<table schema="" tableName="tb_report"></table>
 
 	</context>
 </generatorConfiguration>

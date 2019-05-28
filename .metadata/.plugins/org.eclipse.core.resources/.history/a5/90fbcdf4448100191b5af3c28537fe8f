@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.moon.mapper.TbParamMapper" >
+  <resultMap id="BaseResultMap" type="com.moon.pojo.TbParam" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="number" property="number" jdbcType="VARCHAR" />
+    <result column="pressure" property="pressure" jdbcType="REAL" />
+    <result column="electric" property="electric" jdbcType="REAL" />
+    <result column="active_power" property="activePower" jdbcType="REAL" />
+    <result column="reactive_power" property="reactivePower" jdbcType="REAL" />
+    <result column="wind_speed" property="windSpeed" jdbcType="REAL" />
+    <result column="wind_angle" property="windAngle" jdbcType="REAL" />
+    <result column="rotation_speed" property="rotationSpeed" jdbcType="REAL" />
+    <result column="temperature" property="temperature" jdbcType="REAL" />
+    <result column="cable_angle" property="cableAngle" jdbcType="REAL" />
+    <result column="dynamo_tem" property="dynamoTem" jdbcType="REAL" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, number, pressure, electric, active_power, reactive_power, wind_speed, wind_angle, 
+    rotation_speed, temperature, cable_angle, dynamo_tem
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.moon.pojo.TbParamExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_param
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from tb_param
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from tb_param
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.moon.pojo.TbParamExample" >
+    delete from tb_param
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.moon.pojo.TbParam" >
+    insert into tb_param (id, number, pressure, 
+      electric, active_power, reactive_power, 
+      wind_speed, wind_angle, rotation_speed, 
+      temperature, cable_angle, dynamo_tem
+      )
+    values (#{id,jdbcType=BIGINT}, #{number,jdbcType=VARCHAR}, #{pressure,jdbcType=REAL}, 
+      #{electric,jdbcType=REAL}, #{activePower,jdbcType=REAL}, #{reactivePower,jdbcType=REAL}, 
+      #{windSpeed,jdbcType=REAL}, #{windAngle,jdbcType=REAL}, #{rotationSpeed,jdbcType=REAL}, 
+      #{temperature,jdbcType=REAL}, #{cableAngle,jdbcType=REAL}, #{dynamoTem,jdbcType=REAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.moon.pojo.TbParam" >
+    insert into tb_param
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="number != null" >
+        number,
+      </if>
+      <if test="pressure != null" >
+        pressure,
+      </if>
+      <if test="electric != null" >
+        electric,
+      </if>
+      <if test="activePower != null" >
+        active_power,
+      </if>
+      <if test="reactivePower != null" >
+        reactive_power,
+      </if>
+      <if test="windSpeed != null" >
+        wind_speed,
+      </if>
+      <if test="windAngle != null" >
+        wind_angle,
+      </if>
+      <if test="rotationSpeed != null" >
+        rotation_speed,
+      </if>
+      <if test="temperature != null" >
+        temperature,
+      </if>
+      <if test="cableAngle != null" >
+        cable_angle,
+      </if>
+      <if test="dynamoTem != null" >
+        dynamo_tem,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="number != null" >
+        #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="pressure != null" >
+        #{pressure,jdbcType=REAL},
+      </if>
+      <if test="electric != null" >
+        #{electric,jdbcType=REAL},
+      </if>
+      <if test="activePower != null" >
+        #{activePower,jdbcType=REAL},
+      </if>
+      <if test="reactivePower != null" >
+        #{reactivePower,jdbcType=REAL},
+      </if>
+      <if test="windSpeed != null" >
+        #{windSpeed,jdbcType=REAL},
+      </if>
+      <if test="windAngle != null" >
+        #{windAngle,jdbcType=REAL},
+      </if>
+      <if test="rotationSpeed != null" >
+        #{rotationSpeed,jdbcType=REAL},
+      </if>
+      <if test="temperature != null" >
+        #{temperature,jdbcType=REAL},
+      </if>
+      <if test="cableAngle != null" >
+        #{cableAngle,jdbcType=REAL},
+      </if>
+      <if test="dynamoTem != null" >
+        #{dynamoTem,jdbcType=REAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.moon.pojo.TbParamExample" resultType="java.lang.Integer" >
+    select count(*) from tb_param
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tb_param
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.number != null" >
+        number = #{record.number,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pressure != null" >
+        pressure = #{record.pressure,jdbcType=REAL},
+      </if>
+      <if test="record.electric != null" >
+        electric = #{record.electric,jdbcType=REAL},
+      </if>
+      <if test="record.activePower != null" >
+        active_power = #{record.activePower,jdbcType=REAL},
+      </if>
+      <if test="record.reactivePower != null" >
+        reactive_power = #{record.reactivePower,jdbcType=REAL},
+      </if>
+      <if test="record.windSpeed != null" >
+        wind_speed = #{record.windSpeed,jdbcType=REAL},
+      </if>
+      <if test="record.windAngle != null" >
+        wind_angle = #{record.windAngle,jdbcType=REAL},
+      </if>
+      <if test="record.rotationSpeed != null" >
+        rotation_speed = #{record.rotationSpeed,jdbcType=REAL},
+      </if>
+      <if test="record.temperature != null" >
+        temperature = #{record.temperature,jdbcType=REAL},
+      </if>
+      <if test="record.cableAngle != null" >
+        cable_angle = #{record.cableAngle,jdbcType=REAL},
+      </if>
+      <if test="record.dynamoTem != null" >
+        dynamo_tem = #{record.dynamoTem,jdbcType=REAL},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tb_param
+    set id = #{record.id,jdbcType=BIGINT},
+      number = #{record.number,jdbcType=VARCHAR},
+      pressure = #{record.pressure,jdbcType=REAL},
+      electric = #{record.electric,jdbcType=REAL},
+      active_power = #{record.activePower,jdbcType=REAL},
+      reactive_power = #{record.reactivePower,jdbcType=REAL},
+      wind_speed = #{record.windSpeed,jdbcType=REAL},
+      wind_angle = #{record.windAngle,jdbcType=REAL},
+      rotation_speed = #{record.rotationSpeed,jdbcType=REAL},
+      temperature = #{record.temperature,jdbcType=REAL},
+      cable_angle = #{record.cableAngle,jdbcType=REAL},
+      dynamo_tem = #{record.dynamoTem,jdbcType=REAL}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.moon.pojo.TbParam" >
+    update tb_param
+    <set >
+      <if test="number != null" >
+        number = #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="pressure != null" >
+        pressure = #{pressure,jdbcType=REAL},
+      </if>
+      <if test="electric != null" >
+        electric = #{electric,jdbcType=REAL},
+      </if>
+      <if test="activePower != null" >
+        active_power = #{activePower,jdbcType=REAL},
+      </if>
+      <if test="reactivePower != null" >
+        reactive_power = #{reactivePower,jdbcType=REAL},
+      </if>
+      <if test="windSpeed != null" >
+        wind_speed = #{windSpeed,jdbcType=REAL},
+      </if>
+      <if test="windAngle != null" >
+        wind_angle = #{windAngle,jdbcType=REAL},
+      </if>
+      <if test="rotationSpeed != null" >
+        rotation_speed = #{rotationSpeed,jdbcType=REAL},
+      </if>
+      <if test="temperature != null" >
+        temperature = #{temperature,jdbcType=REAL},
+      </if>
+      <if test="cableAngle != null" >
+        cable_angle = #{cableAngle,jdbcType=REAL},
+      </if>
+      <if test="dynamoTem != null" >
+        dynamo_tem = #{dynamoTem,jdbcType=REAL},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.moon.pojo.TbParam" >
+    update tb_param
+    set number = #{number,jdbcType=VARCHAR},
+      pressure = #{pressure,jdbcType=REAL},
+      electric = #{electric,jdbcType=REAL},
+      active_power = #{activePower,jdbcType=REAL},
+      reactive_power = #{reactivePower,jdbcType=REAL},
+      wind_speed = #{windSpeed,jdbcType=REAL},
+      wind_angle = #{windAngle,jdbcType=REAL},
+      rotation_speed = #{rotationSpeed,jdbcType=REAL},
+      temperature = #{temperature,jdbcType=REAL},
+      cable_angle = #{cableAngle,jdbcType=REAL},
+      dynamo_tem = #{dynamoTem,jdbcType=REAL}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
